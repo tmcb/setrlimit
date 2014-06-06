@@ -29,7 +29,7 @@ main(int argc, char *argv[])
 		errx(1, "Usage: setrlimit "
 			"<resource> <limit> <file> [args]");
         resource = convert_resource(argv[1]);
-	rlim_cur = (rlim_t)strtoul(argv[2], NULL, 10);
+	rlim_cur = (rlim_t)strtoul(argv[2], NULL, 0);
 	apply_rlim_cur(resource, rlim_cur);
 	file = argv[3];	
 	if (execvp(file, &argv[3]) == -1)
