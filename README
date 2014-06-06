@@ -6,5 +6,8 @@ DESCRIPTION
 	It sets the specified soft limit of a given resource before
 	executing a program.
 
+BUILD
+	Just run 'make'.
+
 AUTHOR
 	Tadeu Bastos
