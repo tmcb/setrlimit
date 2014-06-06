@@ -1,0 +1,10 @@
+USAGE
+	setrlimit <resource> <limit> <file> [args]
+
+DESCRIPTION
+	setrlimit is a wrapper to the setrlimit(2) system call in Linux.
+	It sets the specified soft limit of a given resource before
+	executing a program.
+
+AUTHOR
+	Tadeu Bastos
