@@ -59,7 +59,7 @@ convert_resource(char *input)
 	RETURN_IF_MATCH(input, RTPRIO);
 	RETURN_IF_MATCH(input, RTTIME);
 	RETURN_IF_MATCH(input, SIGPENDING);
-	/* FIXME: the returned value may collapse with the defined resources */
+	/* FIXME: the returned value may collide with the defined resources */
 	return -1;
 }
 
