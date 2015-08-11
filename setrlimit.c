@@ -37,13 +37,11 @@ main(int argc, char *argv[])
 	exit(0);
 }
 
-#define RETURN_IF_MATCH(i, r) \
-	if (strcmp((i), (#r)) == 0) return (RLIMIT_##r)
-
 int
 convert_resource(char *input)
 {
-
+#define RETURN_IF_MATCH(i, r) \
+	if (strcmp((i), (#r)) == 0) return (RLIMIT_##r)
 	RETURN_IF_MATCH(input, AS);
 	RETURN_IF_MATCH(input, CORE);
 	RETURN_IF_MATCH(input, CPU);
@@ -59,11 +57,10 @@ convert_resource(char *input)
 	RETURN_IF_MATCH(input, RTPRIO);
 	RETURN_IF_MATCH(input, RTTIME);
 	RETURN_IF_MATCH(input, SIGPENDING);
+#undef RETURN_IF_MATCH
 	/* FIXME: the returned value may collide with the defined resources */
 	return -1;
 }
-
-#undef RETURN_IF_MATCH
 
 void
 apply_rlim_cur(int resource, rlim_t rlim_cur)
